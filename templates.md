@@ -1,89 +1,149 @@
-# LeetCode Java Templates
+Certainly! Here are 10 Java templates that follow common patterns for solving a wide range of LeetCode problems:
 
-This repository contains Java templates for solving the LeetCode top 75 questions. These templates can serve as starting points for solving a wide range of algorithmic problems.
+Two Pointers:
+java
+Copy code
+class Solution {
+    public int solveProblem(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        
+        while (left < right) {
+            // Perform operations based on the problem requirements
+        }
+        
+        // Return the result
+    }
+}
+Sliding Window:
+java
+Copy code
+class Solution {
+    public int solveProblem(int[] nums, int k) {
+        int left = 0;
+        int right = 0;
+        int sum = 0;
+        int result = Integer.MIN_VALUE;
+        
+        while (right < nums.length) {
+            // Expand the window
+            sum += nums[right];
+            
+            while (/* Check for window constraint */) {
+                // Update the result based on the problem requirements
+                
+                // Shrink the window
+                sum -= nums[left];
+                left++;
+            }
+            
+            right++;
+        }
+        
+        // Return the result
+    }
+}
+Depth-First Search (DFS):
+java
+Copy code
+class Solution {
+    public void dfs(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        
+        // Perform operations on the current node
+        
+        dfs(node.left);
+        dfs(node.right);
+    }
+}
+Breadth-First Search (BFS):
+java
+Copy code
+class Solution {
+    public void bfs(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                
+                // Perform operations on the current node
+                
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+        }
+    }
+}
+Binary Search:
+java
+Copy code
+class Solution {
+    public int search(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        
+        return -1; // If the target is not found
+    }
+}
+Dynamic Programming:
+java
+Copy code
+class Solution {
+    public int solveProblem(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        
+        // Initialize the base cases
+        
+        for (int i = 1; i < n; i++) {
+            // Compute the current state based on the previous states
+        }
+        
+        return dp[n - 1]; // Return the final result
+    }
+}
+Backtracking:
+java
+Copy code
+class Solution {
+    public void backtrack(int[] nums, List<Integer> tempList, List<List<Integer>> result) {
+        if (tempList.size() == nums.length) {
+            result.add(new ArrayList<>(tempList));
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+                if (/* Check for constraints */) {
+                    tempList.add(nums[i]);
+                    backtrack(nums, tempList, result);
+                    tempList.remove(tempList.size() - 1);
+                }
+            }
+        }
+    }
+}
+``
 
-## Templates Included
 
-1. Two Sum
 
-```java
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        // Implementation code here
-    }
-}
-
-Reverse Integer
-java
-Copy code
-class Solution {
-    public int reverse(int x) {
-        // Implementation code here
-    }
-}
-Container With Most Water
-java
-Copy code
-class Solution {
-    public int maxArea(int[] height) {
-        // Implementation code here
-    }
-}
-Palindrome Number
-java
-Copy code
-class Solution {
-    public boolean isPalindrome(int x) {
-        // Implementation code here
-    }
-}
-Longest Substring Without Repeating Characters
-java
-Copy code
-class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        // Implementation code here
-    }
-}
-Merge Two Sorted Lists
-java
-Copy code
-class Solution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        // Implementation code here
-    }
-}
-Remove Nth Node From End of List
-java
-Copy code
-class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        // Implementation code here
-    }
-}
-Valid Parentheses
-java
-Copy code
-class Solution {
-    public boolean isValid(String s) {
-        // Implementation code here
-    }
-}
-Merge Intervals
-java
-Copy code
-class Solution {
-    public int[][] merge(int[][] intervals) {
-        // Implementation code here
-    }
-}
-Subarray Sum Equals K
-java
-Copy code
-class Solution {
-    public int subarraySum(int[] nums, int k) {
-        // Implementation code here
-    }
-}
-
-```
