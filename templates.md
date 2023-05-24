@@ -3,6 +3,8 @@ Certainly! Here are 10 Java templates that follow common patterns for solving a 
 Two Pointers:
 java
 Copy code
+
+```java
 class Solution {
     public int solveProblem(int[] nums) {
         int left = 0;
@@ -15,9 +17,13 @@ class Solution {
         // Return the result
     }
 }
+```
+
 Sliding Window:
 java
 Copy code
+
+```java
 class Solution {
     public int solveProblem(int[] nums, int k) {
         int left = 0;
@@ -43,9 +49,13 @@ class Solution {
         // Return the result
     }
 }
+```
+
+
 Depth-First Search (DFS):
 java
 Copy code
+```java
 class Solution {
     public void dfs(TreeNode node) {
         if (node == null) {
@@ -58,9 +68,11 @@ class Solution {
         dfs(node.right);
     }
 }
+```
 Breadth-First Search (BFS):
 java
 Copy code
+```java
 class Solution {
     public void bfs(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
@@ -85,9 +97,12 @@ class Solution {
         }
     }
 }
+```
 Binary Search:
 java
 Copy code
+
+```java
 class Solution {
     public int search(int[] nums, int target) {
         int left = 0;
@@ -108,9 +123,11 @@ class Solution {
         return -1; // If the target is not found
     }
 }
+```
 Dynamic Programming:
 java
 Copy code
+```java
 class Solution {
     public int solveProblem(int[] nums) {
         int n = nums.length;
@@ -125,9 +142,11 @@ class Solution {
         return dp[n - 1]; // Return the final result
     }
 }
+```
 Backtracking:
 java
 Copy code
+```java
 class Solution {
     public void backtrack(int[] nums, List<Integer> tempList, List<List<Integer>> result) {
         if (tempList.size() == nums.length) {
@@ -143,7 +162,7 @@ class Solution {
         }
     }
 }
-``
+```
 
 
 
